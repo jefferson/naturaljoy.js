@@ -9,7 +9,7 @@ Como usar
 
 
 
-                    function atualizaPosicoes(){
+    function atualizaPosicoes(){
   		
 			NaturalJoy.actionClean();
 			
