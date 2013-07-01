@@ -1,4 +1,4 @@
-naturalslide.js
+naturaljoy.js
 ===============
 
 Natural Slide Javascript
