@@ -9,7 +9,7 @@ Possui dependências com jquery-ui, jquery-ui em anexo e jquery para arrastasr a
 Jquery
 ==============
 
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+http://code.jquery.com/jquery-1.9.1.js
 
 
 
