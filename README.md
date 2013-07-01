@@ -5,12 +5,9 @@ Natural Slide Javascript
 
 Primeiro adicione teste código html na sua página
 Possui dependências com jquery-ui e jquery para arrastasr as controles
-<!doctype html>
-<html>
-<header>
-	<title></title>	
-<body>
-</body>
+
+Código html
+==============
 	<div id="data-root-webcam">
 		<div class="well sidebar-nav" style="height:200px">          
 	  <div id="paleta-esquerda" class="paleta"> </div>
@@ -20,7 +17,7 @@ Possui dependências com jquery-ui e jquery para arrastasr as controles
 	  <canvas id="canvas-blended" style="display:none" width="200" height="200"></canvas>          
 	</div><!--/.well --> 
 	</div>
-</html>
+
 Como usar o código javascript
 ===============
 
