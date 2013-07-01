@@ -8,8 +8,9 @@ Como usar
 ===============
 
 
-function atualizaPosicoes(){
-  		//action , x, y, w ,h
+
+                    function atualizaPosicoes(){
+  		
 			NaturalJoy.actionClean();
 			
 			NaturalJoy.actionPush(function(){
