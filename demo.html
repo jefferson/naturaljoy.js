@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<header>
+  <title>Demo</title>
+	<style type="text/css">
+	 	#canvas-source{
+  		width:200px;
+  		max-height: 200px;
+    }
+    #paleta-esquerda{    	
+    	position: absolute;
+	    float: left;
+	    left: 35px;
+		top: 117px;
+		cursor: move;
+		border: 1px solid red;
+		height: 25px;
+		width: 25px;
+		border-radius: 14px;
+		background-color: green;
+
+	}
+	#paleta-direita{
+		position: absolute;
+		float: right;
+		left: 169px;
+		top: 120px;
+		cursor: move;
+		border: 1px solid red;
+		height: 25px;
+		width: 25px;
+		border-radius: 14px;
+		background-color: green;
+
+	}
+	#data-root-webcam{		
+		background-color: white;
+		outline: 5px solid silver;
+		width: 200px;
+		margin: 10px;		
+	}
+	</style>
+</header>
+<body>
+<div id="data-root-webcam">
+    <div class="well sidebar-nav" style="height:200px">          
+  <div id="paleta-esquerda" class="paleta"> </div>
+  <div id="paleta-direita" class="paleta"> </div>
+  <video id="camera" autoplay style="display:none" width="200" height="200"></video>
+  <canvas id="canvas-source"  width="200" height="200" class="img-polaroid span12"></canvas>
+  <canvas id="canvas-blended" style="display:none" width="200" height="200"></canvas>          
+</div><!--/.well --> 
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="NaturalJoy.js"></script>
+<script type="text/javascript">
+var _left = parseInt($("#canvas-source").position().left)
+ var _top  = parseInt($("#canvas-source").position().top)
+
+ var _paleta_esquerda_top  = parseInt($("#paleta-esquerda" ).position().top - _top)
+ var _paleta_esquerda_left = parseInt($("#paleta-esquerda" ).position().left - _left )
+
+ var _paleta_direita_top  = parseInt($( "#paleta-direita" ).position().top - _top)
+ var _paleta_direita_left = parseInt($( "#paleta-direita" ).position().left - _left)
+
+function atualizaPosicoes(){
+
+        NaturalJoy.actionClean();
+
+        NaturalJoy.actionPush(function(){
+
+            console.log('ação esquerda detectada')                            
+
+        }, _paleta_esquerda_left, _paleta_esquerda_top , 25, 25);
+
+        NaturalJoy.actionPush(function(){           
+
+            console.log('ação direita detectada')         
+
+        },  _paleta_direita_left, _paleta_direita_top, 25, 25);
+
+    }
+
+    //marcando as posicoes
+    atualizaPosicoes()
+
+    $( "#paleta-esquerda" ).draggable({stop: function(){
+        _paleta_esquerda_top  = parseInt($(this).position().top - _top)
+        _paleta_esquerda_left = parseInt($(this).position().left - _left)
+        atualizaPosicoes()
+
+    }, containment: "#canvas-source", grid: [ 1,1 ]} );
+
+    $( "#paleta-direita" ).draggable({stop: function(){
+        _paleta_direita_top  = parseInt($(this).position().top - _top)
+        _paleta_direita_left = parseInt($(this).position().left - _left)
+        atualizaPosicoes()
+    },containment: "#canvas-source",  grid: [ 1,1 ]});
+
+
+    window.NaturalJoy.initialize();
+    window.NaturalJoy.play();       
+</script>
+</body>
+</html>
