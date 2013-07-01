@@ -23,6 +23,16 @@ Como usar o código javascript
 
 
 
+   
+     var _left = parseInt($("#canvas-source").position().left)
+     var _top  = parseInt($("#canvas-source").position().top)
+
+     var _paleta_esquerda_top  = parseInt($("#paleta-esquerda" ).position().top - _top)
+     var _paleta_esquerda_left = parseInt($("#paleta-esquerda" ).position().left - _left )
+
+     var _paleta_direita_top  = parseInt($( "#paleta-direita" ).position().top - _top)
+     var _paleta_direita_left = parseInt($( "#paleta-direita" ).position().left - _left)
+
     function atualizaPosicoes(){
   		
 			NaturalJoy.actionClean();
