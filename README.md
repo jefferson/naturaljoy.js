@@ -3,8 +3,25 @@ naturalslide.js
 
 Natural Slide Javascript
 
-
-Como usar
+Primeiro adicione teste código html na sua página
+Possui dependências com jquery-ui e jquery para arrastasr as controles
+<!doctype html>
+<html>
+<header>
+	<title></title>	
+<body>
+</body>
+	<div id="data-root-webcam">
+		<div class="well sidebar-nav" style="height:200px">          
+	  <div id="paleta-esquerda" class="paleta"> </div>
+	  <div id="paleta-direita" class="paleta"> </div>
+	  <video id="camera" autoplay style="display:none" width="200" height="200"></video>
+	  <canvas id="canvas-source"  width="200" height="200" class="img-polaroid span12"></canvas>
+	  <canvas id="canvas-blended" style="display:none" width="200" height="200"></canvas>          
+	</div><!--/.well --> 
+	</div>
+</html>
+Como usar o código javascript
 ===============
 
 
@@ -15,56 +32,13 @@ Como usar
 			
 			NaturalJoy.actionPush(function(){
 
-				console.log('esquerda')
-
-				$("#paleta-esquerda").css('background-color', 'red')
-
-				olhos.classList.add('animado');
-
-				setTimeout(function(){
-					
-					$("#paleta-esquerda").css('background-color', 'green')						
-					
-					cubo.style.display = "block"					
-					olhos.classList.remove('animado');
-					$("div#on-off").click()
-
-					setTimeout(function(){
-
-						cubo.style.display = "none"
-
-					}, 200)
-
-
-				}, 2000)
-
-				$("div#on-off").click()
+				console.log('ação esquerda detectada')							
 
 			}, _paleta_esquerda_left, _paleta_esquerda_top , 25, 25);
 
 			NaturalJoy.actionPush(function(){ 			
 
-				console.log('direita')
-
-				$("#paleta-direita").css('background-color', 'red')
-				olhos.classList.add('animado');
-				setTimeout(function(){
-
-					$("#paleta-direita").css('background-color', 'green')						
-					cubo.style.display = "block"					
-					olhos.classList.remove('animado');
-					$("div#on-off").click()
-
-
-					setTimeout(function(){
-
-						cubo.style.display = "none"
-
-					}, 200)
-
-				}, 2000)
-
-				$("div#on-off").click();
+				console.log('ação direita detectada')			
 
 			},  _paleta_direita_left, _paleta_direita_top, 25, 25);
 
