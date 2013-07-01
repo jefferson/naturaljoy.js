@@ -4,7 +4,15 @@ naturaljoy.js
 Natural Slide Javascript
 
 Primeiro adicione teste código html na sua página
-Possui dependências com jquery-ui e jquery para arrastasr as controles
+Possui dependências com jquery-ui, jquery-ui em anexo e jquery para arrastasr as controles
+
+Jquery
+==============
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+
 
 Código html
 ==============
